@@ -1,3 +1,7 @@
+ 1.
+  /*--------------------
+        * show hide searchbar
+    ----------------------*/
  $('#search_button').on("click", function(e) {
 		$('#search_open').slideToggle();
 		e.stopPropagation(); 
@@ -9,3 +13,35 @@
 		}
    });
    
+
+
+
+
+
+2.
+ /*--------------------
+        * Menu Close
+    ----------------------*/
+    NAY.MenuClose = function(){
+      $('.navbar-nav a').on('click', function() {
+       var toggle = $('.navbar-toggler').is(':visible');
+       if (toggle) {
+         $('.navbar-collapse').collapse('hide');
+       }
+      });
+    }
+
+
+  NAY.MenuTogglerClose = function(){
+    $(".toggler-menu").on('click', function(){
+      $(this).toggleClass('open');
+      $('.header-left').stop().toggleClass('menu-open menu-open-desk');
+    });
+    $('.header-left a').on('click', function() {
+     var toggle = $('.toggler-menu').is(':visible');
+     if (toggle) {
+       $('.header-left').removeClass('menu-open');
+       $('.toggler-menu').removeClass('open');
+     }
+    });
+  }
